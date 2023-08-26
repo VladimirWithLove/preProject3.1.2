@@ -1,0 +1,39 @@
+<head>
+    <title>Update user</title>
+</head>
+<body>
+<div>
+    <h2>Update user</h2>
+    <form th:action="@{/users/updateUser/{id}(id=${user.getId()})}" th:method="post" th:object="${user}">
+        <table border="0" cellpadding="5">
+            <tr>
+                <td>ID: </td>
+                <td th:utext="${user.getId()}"></td>
+            </tr>
+            <tr>
+                <td><label for="name">Name: </label></td>
+                <td><input type="text" th:field="*{name}" id="name"></td>
+            </tr>
+            <tr>
+                <td><label for="surname">Surname: </label></td>
+                <td><input type="text" th:field="*{surname}" id="surname"></td>
+            </tr>
+            <tr>
+                <td><label for="age">Age: </label></td>
+                <td><input type="text" th:field="*{age}" id="age"></td>
+            </tr>
+            <tr>
+                <td><label for="profession">Profession: </label></td>
+                <td><input type="text" th:field="*{profession}" id="profession"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="submit" value="Accept update">
+                    <input type="button" value="Cancel update"
+                           onclick="window.location.href= '/users'">
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>
